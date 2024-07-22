@@ -7,7 +7,7 @@ dotenv.config();
   
 app.use((req, res, next) => { 
     res.header("Access-Control-Allow-Origin",  
-               "http://localhost:4200"); 
+               ["http://localhost:4200", 'https://rock-watch-frontend.vercel.app']); 
     res.header("Access-Control-Allow-Headers",  
                "Origin, X-Requested-With, Content-Type, Accept"); 
     next(); 
