@@ -14,7 +14,7 @@ app.use((req, res, next) => {
 }); 
 
 app.get('*', (req, res) => {
-  res.send('Rock watch backend');
+  res.json('Rock watch backend');
 });
 
 app.get('/api/asteroids-data', async (req, res) => {
