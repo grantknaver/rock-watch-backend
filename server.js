@@ -13,6 +13,10 @@ app.use((req, res, next) => {
     next(); 
 }); 
 
+app.get('*', (req, res) => {
+  res.send('Rock watch backend');
+});
+
 app.get('/api/asteroids-data', async (req, res) => {
     try {
       const { startDate, endDate } = req.query;
