@@ -13,10 +13,6 @@ app.use((req, res, next) => {
     next(); 
 }); 
 
-app.get('*', (req, res) => {
-  res.json('Rock watch backend');
-});
-
 app.get('/api/asteroids-data', async (req, res) => {
     try {
       const { startDate, endDate } = req.query;
@@ -28,6 +24,10 @@ app.get('/api/asteroids-data', async (req, res) => {
       console.error(error);
       res.status(500).json({ error: 'An error occurred' });
     }
+});
+
+app.get('*', (req, res) => {
+  res.json('Rock watch backend');
 });
   
 app.listen(4500, () => { 
